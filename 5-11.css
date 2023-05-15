@@ -23,6 +23,7 @@ title{
     flex-direction: column;
     align-items: center;
     margin-left: 15px;
+    
 }
 .main{
     border: 8px solid rgb(36, 36, 124);
@@ -33,7 +34,6 @@ title{
     text-align: center;
     flex-direction: row;
     padding-top: 20px;
-
 }
 .phone{
     display: flex;
