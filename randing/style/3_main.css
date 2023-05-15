@@ -1,0 +1,23 @@
+.section{
+    padding: 64px 16px;
+    text-align: center; 
+}
+
+.section__tag{
+    font-size: 26px;
+    color:  rgb(53, 23, 110);
+}
+
+.section__title{
+    font-size: 72px;
+    font-weight: bold;
+    color: rgb(53, 23, 110);
+}   
+
+
+@media (min-width: 769px ){
+    main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
