@@ -1,13 +1,15 @@
 .header{
     display: flex;
     position: sticky;
-
-    /* 스크롤 올라가면 컨텐츠 위로 올라오도록 설정해주는 코드*/
+    /* 스크롤 올라가면 nav바가 고정되어서 상단에 위치하게 해주는 코드
+    opacity0.7; 와 backdrop-filter:blur(px);속성을 적절히 활용하면 헤더 영역 아래로 메인 영역을 살짝 비치게 하는 코드 (씨수루)*/
     z-index: 2;
     top: 0;
     height: 72px;
     justify-content: space-between;
+    /* 수평축 정렬, 사이 간격 균일하게 만드는 코드 */
     align-items: center;
+    /* 수직축 정렬, 가운데로 */
     background-color: rgb(247, 115, 207);
 }
 
@@ -17,12 +19,16 @@
     height: 72px;
     line-height: 72px;
     cursor: pointer;
+    /* 해당 태그 위에 위치하는 마우스 커서의 모양 변경
+    auto자동 default기본값 pointer손가락 모양 wait로딩  */
     text-decoration: none;
 }
 
 .header_logo{
     height: 48px;
     vertical-align: middle;
+    /* 인라인, 인라인-블록, (Table cell에 적용 시 내용에 영향미침) 등을 포함한 모든 인라인 요소의 수직정렬에 사용
+    but, 블록 레벨 요소의 수직정렬엔 영향 X  */
     margin-bottom: 4px;
     font-size: 60px;
 }
@@ -40,8 +46,10 @@
 @media (max-width: 768px){
     .header_nav {
         display: none;
+        /* 화면 상 어떤 영역을 차지하지 않고 사라진 것 처럼 만들어줌 
+        But, visibility:hidden은 해당 요소가 보이지 않을 뿐 요소가 존재하는 영역은 확실히 보이게  함*/
     }
-        /* 사라지게 만들어줌 */
+      
     .header_menu_btn{
         all: unset;
         display: block;
@@ -50,14 +58,23 @@
         background-image: url("../images/menu-button.svg");
         background-size: 50%;
         background-repeat: no-repeat;
+        /* 배경 이미지 반복 여부 정하는 속성 
+        repeat : 가로 방향, 세로 방향으로 반복
+        repeat-x : 가로 방향으로 반복
+        repeat-y : 세로 방향으로 반복
+        no-repeat : 반복하지 않습니다.
+        initial : 기본값으로 설정합니다.
+        inherit : 부모 요소의 속성값을 상속 */
         background-position: center;
+        cursor: pointer;
+     
     }
 
 .header_menu_btn:checked {
     background-color: rgb(216, 218, 112);
 }
 
-.header_menu_btn + .header_nav{
+.header_menu_btn:checked + .header_nav{
     display: inherit;
     position: absolute;
     top: 72px;
@@ -77,6 +94,7 @@
     border-bottom: 2px solid rgb(222, 224, 71);
 }
 }
+
 @media (min-width: 769px){
     .header_nav_item {
         display: inline-block;
@@ -96,7 +114,13 @@
         width: 0;
         height: 0;
         background-color: white;
-        transition: all 359ms; /*애니메이션 효과 구글링해봐*/
+        transition: all 359ms; 
+        /* 애니메이션 효과/ 해당 요소에 추가할 CSS 스타일 전환(transition) 효과를 설정합니다. 추가할 전환 효과가 지속될 시간을 설정합니다.
+            1. transition
+            2. transition-delay
+            3. transition-duration
+            4. transition-property
+            5. transition-timing-function*/
     }
     .header_nav_item:hover::after{
         left: 0;
