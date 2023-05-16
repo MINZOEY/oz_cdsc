@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무야호~ 쟈스</title>
+    <script>
+        const yaBox = function(){ 
+        let year =  document.querySelector('#year__input').value
+        let month = document.querySelector('#month__input').value
+        let day = document.querySelector('#day__input').value
+
+        console.log(year, month, day)
+    }
+
+       
+    </script>
+</head>
+<body>
+
+    <input id="year__input" class="input__box"  />
+    <input id="month__input" class="input__box"  />
+    <input id="day__input" class="input__box"  />
+
+    <button onclick="yaBox()">버튼 만들기!</button>
+</body>
+</html>
