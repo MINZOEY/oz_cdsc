@@ -1,5 +1,6 @@
 #about{
     background-color: rgba(204, 19, 127, 0.404);
+    padding-right: 16px;
 }
 
 
@@ -14,6 +15,7 @@
 
 .about__card{
     padding: 58px;
+    margin: 50px;
     text-align: center;
     color: white;
     background-color: rgba(111, 13, 124, 0.644);
@@ -35,6 +37,7 @@
 .about__title._3{
     color: rgb(236, 227, 147);
 }
+
 
 @media (max-width: 768px ) {
     .about{
